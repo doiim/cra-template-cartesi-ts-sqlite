@@ -1,0 +1,23 @@
+{
+  "name": "cra-template-grd",
+  "version": "0.8.0",
+  "homepage": "",
+  "keywords": [
+    "react",
+    "create-react-app",
+    "template",
+    "boilerplate",
+    "cartesi",
+    "typescript",
+    "sqlite"
+  ],
+  "description": "The CRA base template.",
+  "license": "Apache-2.0",
+  "engines": {
+    "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/doiim/cra-template-cartesi-ts-sqlite"
+  }
+}
