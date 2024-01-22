@@ -1,0 +1,10 @@
+.fixed {
+  color: white;
+  position: fixed;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  top: 20px;
+  right: 20px;
+  gap: 10px;
+}
