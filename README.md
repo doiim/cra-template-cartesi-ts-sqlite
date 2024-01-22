@@ -14,8 +14,18 @@ Additional information on how to run the app will be at README.md inside the cre
 
 ## For Maintainers
 
-To update template from the source repository we suggest call this one liner:
+1. To update template from the source repository we suggest call this:
 
 ```sh
 git subtree pull --prefix template https://github.com/doiim/cartesi-ts-react-sqlite master --squash
+mv ./template/.gitignore ./template/gitignore
+git add .
+```
+
+2. Then update the version on NPM and deploy the package
+
+```sh
+git subtree pull --prefix template https://github.com/doiim/cartesi-ts-react-sqlite master --squash
+mv ./template/.gitignore ./template/gitignore
+git add .
 ```

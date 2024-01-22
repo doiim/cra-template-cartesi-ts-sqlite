@@ -1,5 +1,5 @@
 {
-  "name": "cra-template-grd",
+  "name": "cra-template-cartesi-ts-sqlite",
   "version": "0.8.0",
   "homepage": "",
   "keywords": [
@@ -11,7 +11,7 @@
     "typescript",
     "sqlite"
   ],
-  "description": "The CRA base template.",
+  "description": "A Create React App template for Cartesi React SQlite projects.",
   "license": "Apache-2.0",
   "engines": {
     "node": ">=10"
