@@ -21,11 +21,3 @@ git subtree pull --prefix template https://github.com/doiim/cartesi-ts-react-sql
 mv ./template/.gitignore ./template/gitignore
 git add .
 ```
-
-2. Then update the version on NPM and deploy the package
-
-```sh
-git subtree pull --prefix template https://github.com/doiim/cartesi-ts-react-sqlite master --squash
-mv ./template/.gitignore ./template/gitignore
-git add .
-```
