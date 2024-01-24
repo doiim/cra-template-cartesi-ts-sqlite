@@ -37,9 +37,9 @@ const App = () => {
   const [cursor, setCursor] = useState(null);
 
   // Retrieve notices every 500 ms
-  const { loading, error, data } = useQuery(GET_NOTICES, {
+  const { data } = useQuery(GET_NOTICES, {
     variables: { cursor },
-    pollInterval: 500,
+    pollInterval: 2000,
   });
 
   useEffect(() => {
@@ -74,9 +74,9 @@ const App = () => {
       <header className="header">
         <h1>Cartesi + React + SQLite</h1>
         <p>This project is designed to streamline the process of kickstarting new projects. It incorporates React + Typescript, integrates with Ethers and communicates to a SQLite database running on Cartesi Machine.</p>
-        <p>Connect your wallet to be able to Add/Remove products from database.</p>
+        {!signer ? <p>Connect your wallet to be able to Add/Remove products from database.</p> : null}
       </header>
-      <main>
+      {signer ? <main>
         <CreateProductForm signer={signer}></CreateProductForm>
         <div className="holder">
           <div className='flex-row'>
@@ -85,6 +85,7 @@ const App = () => {
           </div>
         </div>
       </main>
+        : null}
       <footer>
         <p>powered by</p>
         <LogoCartesi />

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { Signer, providers } from 'ethers';
 import styles from './WalletConnector.module.css';
 
@@ -6,12 +6,15 @@ type WalletConnectorProps = {
     onSignerChange: (signer: Signer | null) => void;
 };
 
+const targetChain = process.env.REACT_APP_CHAIN_ID ? process.env.REACT_APP_CHAIN_ID : '0x7a69'
+
 const WalletConnector: React.FC<WalletConnectorProps> = ({ onSignerChange }) => {
     const [connectedWallet, setConnectedWallet] = useState<string | null>(null);
 
-    const connectWallet = async () => {
+    const connectWallet = useCallback(async () => {
         try {
             // Connect wallet in Metamask
+            (window as any).ethereum.enable();
             const provider = new providers.Web3Provider((window as any).ethereum);
             const signer = await provider.getSigner();
 
@@ -20,23 +23,21 @@ const WalletConnector: React.FC<WalletConnectorProps> = ({ onSignerChange }) => 
 
             await provider.send(
                 'wallet_switchEthereumChain',
-                [{ chainId: '0x7a69' }],
+                [{ chainId: targetChain }],
             );
         } catch (error) {
             console.error('Failed to connect wallet:', error);
         }
-
-    };
+    }, []);
 
     const disconnectWallet = () => {
         setConnectedWallet(null);
         onSignerChange(null);
-
     };
 
     useEffect(() => {
         connectWallet();
-    }, [])
+    }, [connectWallet])
 
     return (
         <div className={styles.fixed}>
