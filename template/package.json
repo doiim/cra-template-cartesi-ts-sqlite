@@ -1,7 +1,8 @@
 {
   "name": "cartesi-react-sqlite-app",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "homepage": "https://doiim.github.io/cartesi-ts-react-sqlite",
   "dependencies": {
     "@apollo/client": "^3.8.9",
     "@cartesi/rollups": "^1.2.0",
@@ -19,7 +20,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [

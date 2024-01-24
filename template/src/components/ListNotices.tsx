@@ -20,8 +20,8 @@ const ListProducts: React.FC<ListProductsProps> = ({ notices }) => {
                     </tr>
                 </thead>
                 <tbody>
-                    {notices.map((p: ProductAction) => (
-                        <tr key={p.id}>
+                    {notices.map((p: ProductAction, idx: number) => (
+                        <tr key={idx}>
                             <td>{p.id}</td>
                             <td>{p.name}</td>
                             {p.action === 'add' ? <td className={styles.green}>{p.action}</td> : null}
