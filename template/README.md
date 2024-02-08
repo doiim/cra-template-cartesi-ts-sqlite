@@ -2,7 +2,7 @@
 
 The project is a React application built with Create React App and utilizes TypeScript for type safety. It is managed using npm as the package manager. The goal of the project is to create a template that streamlines the process of kickstarting new projects. The template incorporates the latest version of React and integrates with Ethers, allowing for seamless interaction with the underlying blockchain. For testing purposes, a pre-deployed demo on the Sepolia Network is available for users to explore before starting their own development.
 
-<!-- [https://blabla](Live Demo) -->
+[Live Demo](https://doiim.github.io/cartesi-ts-react-sqlite/)
 
 ## Installation
 
@@ -19,7 +19,7 @@ Before run this app it would be required to run the backend service for it. To r
 2. Clone the backend repo and install it
 
 ```sh
-git clone https://github.com/path-to-repo.git
+git clone https://github.com/doiim/cartesi-ts-sqlite
 cd path
 sunodo build
 ```

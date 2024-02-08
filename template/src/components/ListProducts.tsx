@@ -22,6 +22,7 @@ const ListProducts: React.FC<ListProductsProps> = ({ signer, noticesLength }) =>
     const [status, setStatus] = useState('');
 
     useEffect(() => {
+        if (noticesLength === 0) return;
         const fetchProducts = async () => {
             try {
                 if (!QUERY_INSPECT) throw new Error('QUERY_INSPECT not set');
